@@ -1,0 +1,24 @@
+SELECT
+  CAST(strftime('%H', reacted_at) AS INTEGER) AS hour_of_day,
+  COUNT(reaction_type) AS no_of_reactions
+FROM
+  user_likes
+WHERE
+  strftime('%Y', reacted_at) = "2020"
+GROUP BY
+  hour_of_day
+ORDER BY
+  hour_of_day ASC;
+  
+  
+  
+  
+  
+  
+  
+  
+  Get the number of reactions (likes/dislikes) generated in each hour of the day in the year 2020.
+
+Note:
+For this question, convert thehour_of_dayin string datatype to INT datatype.
+Sort the output in the ascending order ofhour_of_day
