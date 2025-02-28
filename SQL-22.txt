@@ -1,0 +1,22 @@
+SELECT
+  name,
+  channel_id,
+  no_of_views,
+  published_datetime
+FROM
+  video
+WHERE
+  no_of_views > 100000
+  AND name LIKE "%trailer%"
+ORDER BY
+  no_of_views DESC,
+  published_datetime DESC;
+  
+  
+  
+  
+  Get all the recent movie trailers that have more than 1 lakh views.
+
+Note:
+Consider the videos that have "trailer" in theirnameas trailers.
+Sort the output in the descending order ofno_of_viewsandpublished_datetime
