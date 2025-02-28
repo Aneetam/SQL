@@ -1,0 +1,23 @@
+SELECT
+  gender,
+  COUNT() AS total_users
+FROM
+  user
+WHERE
+  premium_membership >= 1
+GROUP BY
+  gender  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get the number of male and female premium users in the platform.
+
+Expected Output Format
+gender	total_users
+F	...
+M	...
