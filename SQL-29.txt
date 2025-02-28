@@ -1,0 +1,25 @@
+SELECT
+  channel_id
+FROM
+  video
+GROUP BY
+  channel_id
+HAVING
+  COUNT(video_id) >= 50
+ORDER BY
+  channel_id ASC;   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get the ids of all the channels that have uploaded at least 50 videos.
+
+Note:
+Sort the output in the ascending order of thechannel_id
