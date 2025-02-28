@@ -1,0 +1,22 @@
+SELECT channel_id
+FROM video
+WHERE 
+    (LOWER(name) LIKE '%ai/ml%' 
+    OR LOWER(name) LIKE '%cyber security%'
+    OR LOWER(name) LIKE '%data science%'
+    OR LOWER(name) LIKE '%robotics%')
+    AND CAST(strftime('%Y', published_datetime) AS INTEGER) BETWEEN 2018 AND 2021
+GROUP BY channel_id
+HAVING COUNT(video_id) >= 20
+ORDER BY channel_id ASC;
+
+
+
+
+Get all the channel_ids that uploaded at least 20 videos in "AI/ML", "Cyber Security", "Data Science" or "Robotics" technologies between 2018 and 2021.
+
+Example: If a channel publishes 5 videos in AI/ML, 10 videos in Cyber Security and 5 videos in Data Science, consider the channel.
+
+Note:
+Consider all the videos that have any of the technologies mentioned above in theirname
+Sort the output in the ascending order of channel_id.
