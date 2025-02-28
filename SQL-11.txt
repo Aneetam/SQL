@@ -1,0 +1,20 @@
+SELECT
+  name,
+  MATCH,
+  (CAST(score AS FLOAT) / no_of_balls) * 100 AS strike_rate
+FROM
+  player
+ORDER BY
+  strike_rate DESC;
+  
+  
+  
+ Calculate the strike rate of all the players in every match.
+
+strike_rate = (score of the player / no_of_balls)*100
+
+ Note: Strike rate in the output should be a float value.
+
+In SQL, when an integer is divided by another integer, it results in another integer value, i.e, 3/2 = 1 which is an integer instead of 1.5 which is of float type. So we need to convert either the numerator or denominator to float to get more accurate results, i.e 3.0/2 or 3/2.0, to get 1.5 as output.
+
+Let's apply the same while calculating the strike_rate to get accurate results.
