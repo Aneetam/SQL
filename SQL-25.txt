@@ -1,0 +1,22 @@
+SELECT
+  name,
+  published_datetime,
+  no_of_views
+FROM
+  video
+WHERE
+  name LIKE "%esport%"
+  AND no_of_views > 100000
+  AND CAST(strftime('%Y', published_datetime) AS INTEGER) BETWEEN 2018
+  AND 2020
+ORDER BY
+  no_of_views DESC,
+  published_datetime DESC;
+  
+  
+  
+  Get all the esport videos that crossed one lakh views and were released between 2018 and 2020.
+
+Note:
+Consider the videos that have "esport" in theirname as gaming videos.
+Sort the output in the descending order ofno_of_viewsandpublished_datetime
