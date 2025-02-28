@@ -1,0 +1,25 @@
+SELECT
+  CAST(strftime('%Y', published_datetime) AS INTEGER) AS year,
+  COUNT(video_id) AS no_of_videos
+FROM
+  video
+GROUP BY
+  year
+ORDER BY
+  year ASC;  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get the number of videos released in each year.
+
+Note:
+For this question, convert theyearin string datatype to INT datatype.
+Sort the output in the ascending order ofyear
+Expected Output Format
