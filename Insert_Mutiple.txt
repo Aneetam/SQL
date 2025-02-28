@@ -1,0 +1,5 @@
+INSERT INTO
+  player(name, age, score)
+VALUES
+  ('Sam', 39, 35),
+  ('John', 47, 35);

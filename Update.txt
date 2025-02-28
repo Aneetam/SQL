@@ -1,0 +1,4 @@
+UPDATE
+  player
+SET
+  score = 0;
