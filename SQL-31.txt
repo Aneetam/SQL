@@ -1,0 +1,17 @@
+SELECT
+  channel_id,
+  SUM(duration_in_secs) / 3600.0 AS no_of_hours
+FROM
+  video
+GROUP BY
+  channel_id
+ORDER BY
+  no_of_hours DESC;
+  
+  
+  
+  Find the sum of durations of the videos published by each channel in hours.
+
+Note:
+The output must contain the duration as number of hours.
+Sort the output in the descending order of theno_of_hours
