@@ -1,0 +1,19 @@
+SELECT
+  DISTINCT video_id
+FROM
+  video_genre
+WHERE
+  genre_id IN ('201', '202', '203', '211')
+ORDER BY
+  video_id DESC;
+  
+  
+ Get the distinct ids of videos that belong to the following genres.
+
+genre_id	genre
+201	Comedy
+202	Action
+203	Thriller
+211	Scifi
+Note:
+Sort the output in the descending order ofvideo_id
