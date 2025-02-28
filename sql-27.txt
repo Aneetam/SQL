@@ -1,0 +1,13 @@
+SELECT
+  COUNT(DISTINCT country) AS countries_count
+FROM
+  user;   
+  
+  
+  
+  
+  
+  
+  
+  
+  Get the total number of distinct countries where the users are located. Country of the user is present in theusertable.
