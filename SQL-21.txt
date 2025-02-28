@@ -1,0 +1,22 @@
+SELECT
+  name,
+  channel_id,
+  no_of_views
+FROM
+  video
+ORDER BY
+  no_of_views DESC,
+  published_datetime DESC
+LIMIT
+  10;
+  
+  
+  
+  Get the top 10 most viewed videos till date.
+
+Note:
+Sort the videos by no_of_views from highest to lowest. For videos with the same number of views, order them by published_datetime, with the most recent video first.
+
+Expected Output Format
+name	channel_id	no_of_views
+...	...	...
