@@ -1,0 +1,25 @@
+SELECT
+  name,
+  MAX(score) AS highest_score,
+  MIN(score) AS lowest_score
+FROM
+  player
+WHERE
+  (CAST(score AS FLOAT) / no_of_balls) * 100 > 50
+GROUP BY
+  name;   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Fetch the name, highest and lowest scores of player/s for the matches in which strike rate is greater than 50.0.
+
+Expected Output Format:
+name	highest_score	lowest_score
+...	...	...
