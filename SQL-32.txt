@@ -1,0 +1,28 @@
+strftime('%Y', published_datetime)SELECT
+  name,
+  no_of_views,
+  CASE
+    WHEN no_of_views <= 10000 THEN "poor"
+    WHEN no_of_views > 10000
+    AND no_of_views <= 100000 THEN "average"
+    ELSE "good"
+  END AS category
+FROM
+  video
+WHERE
+  channel_id = 350
+ORDER BY
+  published_datetime ASC; 
+  
+  
+  Categorise the performance of all the videos released by the “Motivation grid” Channel (id = 350).
+
+Performance of a video is measured based on the number of views of the video.
+
+Categorization
+no_of_views	category
+Less than or equal to 10000	poor
+Greater than 10000 and less than or equal to 100000	average
+Greater than 100000	good
+Note
+Sort the output in the ascending order ofpublished_datetime
