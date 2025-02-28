@@ -1,0 +1,20 @@
+SELECT
+  name,
+  MAX(score) AS highest_score
+FROM
+  player
+WHERE
+  strftime('%Y', match_date) = '2006'
+GROUP BY
+  name
+ORDER BY
+  highest_score DESC;
+  
+  
+  
+  
+  
+ 
+ Get the highest score of each player who played in the year 2006.
+
+Note: Output must contain rows in the descending order ofhighest_score.
