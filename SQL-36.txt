@@ -1,0 +1,30 @@
+SELECT
+  channel_id
+FROM
+  video
+WHERE
+  (
+    LOWER(name) LIKE '%ai/ml%'
+    OR LOWER(name) LIKE '%robotics%'
+  ) -- Ensures case-insensitive matching
+  AND CAST(strftime('%Y', published_datetime) AS INTEGER) BETWEEN 2018
+  AND 2021
+GROUP BY
+  channel_id
+ORDER BY
+  channel_id ASC;   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get all the channel_ids that uploaded at least one video in "AI/ML" or "Robotics" technologies between 2018 and 2021. 
+
+Note:
+Consider all the videos that have any of the technologies mentioned above in theirname
+Sort the output in the ascending order ofchannel_id
+Expected Output Format
