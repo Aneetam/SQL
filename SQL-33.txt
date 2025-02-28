@@ -1,0 +1,24 @@
+SELECT
+  CAST(strftime('%m', subscribed_datetime) AS INTEGER) AS month_of_year,
+  COUNT(user_id) AS no_of_subscribers
+FROM
+  channel_user
+WHERE
+  channel_id = 351
+  AND strftime('%Y', subscribed_datetime) = "2020"
+GROUP BY
+  month_of_year
+ORDER BY
+  month_of_year ASC;
+  
+  
+  
+  For Marvel channel (id = 351), get the number of subscribers added in each month in the year 2020.
+
+Note:
+You can find the subscribed date of a user for a channel in thechannel_usertable.
+For this question, convert themonth_of_yearin string datatype to INT datatype.
+Sort the output in the ascending order of the month.
+Expected Output Format
+month_of_year	no_of_subscribers
+...	...
