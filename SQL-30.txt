@@ -1,0 +1,24 @@
+SELECT
+  video_id,
+  name,
+  ROUND(SUM(no_of_views) / 1000.0, 3) AS no_of_views_in_thousands
+FROM
+  video
+GROUP BY
+  video_id,
+  name
+ORDER BY
+  no_of_views_in_thousands DESC,
+  name ASC;
+  
+  
+  
+  
+  For all the videos, represent the number of views in multiples of thousands.
+
+For example, if the number of views of a video is 27,9351, it should be represented as 279.351 in the output.
+
+Note:
+Sort the output in the descending order ofno_of_views_in_thousands, and then in the alphabetical order ofname
+Expected Output Format
+video_id	name	no_of_views_in_thousands
