@@ -1,0 +1,25 @@
+SELECT
+  UPPER(name) AS name
+FROM
+  player
+WHERE
+  played_for_team = "SRH"
+EXCEPT
+SELECT
+  UPPER(name) AS name
+FROM
+  player
+WHERE
+  played_for_team <> "SRH"
+ORDER BY
+  name ASC;
+  
+  
+  
+  
+  Get all the player/s who played only for SRH
+
+Note: 
+
+Names in the output must be in capital letters.
+Output must be in the ascending order of name
