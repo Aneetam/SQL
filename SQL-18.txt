@@ -1,0 +1,16 @@
+SELECT
+  student_id,
+  name
+FROM
+  student_exam_report
+WHERE
+  year = 2020
+  AND overall_grade <> 'F'
+EXCEPT
+SELECT
+  student_id,
+  name
+FROM
+  student_exam_report
+WHERE
+  year < 2020;
