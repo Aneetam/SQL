@@ -1,0 +1,25 @@
+SELECT
+  name
+FROM
+  player
+WHERE
+  played_for_team = "CSK"
+INTERSECT
+SELECT
+  name
+FROM
+  player
+WHERE
+  played_for_team = "RCB"
+ORDER BY
+  name ASC;   
+  
+  
+  
+  
+  
+Get all the player/s who played for both CSK and RCB.
+
+Note: Output must be in the ascending order of name
+
+Expected Output Format:
