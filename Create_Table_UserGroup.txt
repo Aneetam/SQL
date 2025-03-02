@@ -1,0 +1,28 @@
+CREATE TABLE user_group(
+  user_id INT,
+  group_id INT,
+  joined_at DATETIME,
+  is_admin BOOL,
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+  FOREIGN KEY (group_id) REFERENCES group_details(id) ON DELETE CASCADE
+);                 
+
+
+
+
+
+
+
+
+
+A user can be in multiple groups, and a group can contain many users.
+
+Now, let’s create user_group table to capture the many-to-many relationship between user and group entity types.
+
+Below are the attributes of the relationship.
+
+attribute	description
+joined_at	a datetime field
+is_admin	a boolean field
+Note:
+Create this junction table in such a way that if we delete a user/group, then the related data in the user_group must be automatically deleted.
