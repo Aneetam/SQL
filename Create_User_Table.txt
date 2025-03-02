@@ -1,0 +1,19 @@
+CREATE TABLE user(
+  id integer NOT NULL PRIMARY KEY,
+  name varchar(250),
+  gender varchar(50),
+  email_id varchar(500)
+);  
+
+
+
+
+
+
+Write a query to represent the user entity type in the relational database. Below are the attributes of a user entity type.
+
+attribute	description
+id	an integer to uniquely identify a user - key attribute
+name	a string of max length 250 characters
+gender	a string of max length 50 characters
+email_id	a string of max length 500 characters
