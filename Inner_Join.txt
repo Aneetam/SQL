@@ -1,0 +1,25 @@
+SELECT
+  review.id,
+  review.course_id,
+  review.content,
+  review.created_at,
+  review.student_id,
+  student.id,
+  student.full_name,
+  student.age,
+  student.gender
+FROM
+  review
+  INNER JOIN student
+WHERE
+  review.student_id = student.id;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Perform inner join betweenreviewandstudenttable.
