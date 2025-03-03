@@ -1,0 +1,27 @@
+SELECT
+  review.id,
+  review.course_id,
+  review.content,
+  review.created_at,
+  review.student_id,
+  course.id,
+  course.name,
+  course.duration,
+  course.instructor_id
+FROM
+  review
+  INNER JOIN course
+WHERE
+  review.course_id = course.id;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get all the reviews along with the course names.
+Every review is associated with a course. So, we can perform an inner join on reviewandcoursetables.
