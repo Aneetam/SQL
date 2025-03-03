@@ -1,0 +1,8 @@
+SELECT
+  *
+FROM
+  course NATURAL
+  JOIN instructor;
+  
+  
+  Perform natural join between course and instructor table.
