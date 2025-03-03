@@ -1,0 +1,12 @@
+SELECT
+  course.name
+FROM
+  course
+  LEFT JOIN student_course ON course.id = student_course.course_id
+WHERE
+  student_course.student_id IS NULL;
+  
+  Get the course names in which no student has registered.
+
+Note:
+We can perform left join betweencourseandstudent_coursetables, and then filter the rows for whichstudent_idis NULL
