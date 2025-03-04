@@ -1,0 +1,14 @@
+SELECT
+  COUNT() AS posts_count
+FROM
+  user
+  INNER JOIN post ON user.user_id = post.posted_by
+WHERE
+  user.name = "James Williams";
+  
+  
+  
+  Fetch the total number of posts posted by “James Williams” till date asposts_count
+
+Note:
+Condiser that the name of the user is “James Williams”
