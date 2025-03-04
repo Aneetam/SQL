@@ -1,0 +1,27 @@
+SELECT
+  course.name AS course_name,
+  COUNT() AS no_of_students
+FROM
+  student_course
+  INNER JOIN course ON course.id = student_course.course_id
+WHERE
+  course.name = "Machine Learning"
+  AND CAST(strftime("%Y", enrollment_date) AS integer) = 2021
+  
+  
+  
+  
+  
+  
+  
+  Continuation of question 5.
+Get the number of students who enrolled for the "Machine Learning" course in 2021.
+
+Note:
+Solving this question involves performing inner join oncourseandstudent_coursetables.
+You can get the year from the enrollment date.
+We have to perform the count() aggregation.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+course_name	no_of_students
+...	...
