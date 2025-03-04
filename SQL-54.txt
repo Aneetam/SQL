@@ -1,0 +1,23 @@
+SELECT
+  user.name,
+  user.age,
+  post.post_id,
+  post.content,
+  post.posted_at
+FROM
+  user
+  INNER JOIN post ON user.user_id = post.posted_by
+WHERE
+  user.name = "James Williams"
+ORDER BY
+  posted_at DESC
+LIMIT
+  5;
+  
+  
+  
+  Fetch the 5 recent posts posted by “James Williams”.
+
+Note:
+Condiser that the name of the user is “James Williams”
+Get the recent posts based onposted_atcolumn in post table
