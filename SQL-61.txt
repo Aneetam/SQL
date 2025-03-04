@@ -1,0 +1,32 @@
+SELECT
+  post.post_id,
+  post.content,
+  count(
+    CASE
+      WHEN reaction.reaction_type IN("LIKE", "LIT", "WOW", "LOVE") THEN 1
+      ELSE NULL
+    END
+  ) AS positive_reactions_count,
+  count(
+    CASE
+      WHEN reaction.reaction_type IN("DISLIKE") THEN 1
+      ELSE NULL
+    END
+  ) AS negative_reactions_count
+FROM
+  post
+  LEFT JOIN reaction ON post.post_id = reaction.post_id
+GROUP BY
+  post.post_id
+HAVING
+  negative_reactions_count > positive_reactions_count
+ORDER BY
+  post.post_id ASC;
+  
+  
+  
+  A general manager from the social networking site would like to review the content in all the posts that have more negative reactions over positive reactions.
+
+Note:
+Consider the reaction_type "LIKE", "LIT", "WOW" and "LOVE" as positive reactions, and "DISLIKE" as a negative reaction.
+Output must contain rows in the ascending order of post_id.
