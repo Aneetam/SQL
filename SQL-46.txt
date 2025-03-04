@@ -1,0 +1,27 @@
+SELECT
+  student_course.student_id,
+  course.name AS course_name,
+  student_course.enrollment_date
+FROM
+  student_course
+  INNER JOIN course ON course.id = student_course.course_id
+WHERE
+  course.name = "Machine Learning"
+  AND CAST(strftime("%Y", enrollment_date) AS integer) = 2021
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Get all the student_ids who enrolled for the "Machine Learning" course in 2021.
+
+Note:
+Solving this question involves performing inner join onstudent_courseandcoursetables.
+You can get the year from the enrollment date.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+student_id	course_name	enrollment_date
