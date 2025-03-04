@@ -1,0 +1,24 @@
+SELECT
+  name,
+  (
+    SELECT
+      AVG(rating)
+    FROM
+      product
+    WHERE
+      category = "MOBILE"
+  ) - rating AS rating_variance
+FROM
+  product
+WHERE
+  category = "MOBILE";
+  
+  
+  Let's now calculate the rating variance of products in the "MOBILE" category.
+
+Note:
+Rating variance is the difference between average rating and rating of a product 
+
+Expected Output Format:
+name	rating_variance
+...	...
