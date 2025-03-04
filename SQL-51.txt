@@ -1,0 +1,25 @@
+SELECT
+  student.id AS student_id,
+  student.full_name AS student_name,
+  course.id AS course_id,
+  course.name AS course_name,
+  score,
+  enrollment_date
+FROM
+  student
+  LEFT JOIN student_course ON student.id = student_course.student_id
+  LEFT JOIN course ON student_course.course_id = course.id;
+  
+  
+  
+  
+  
+  
+  
+  Get all the students details and all the courses for which they have enrolled.
+
+Note:
+Here, we have to join student, student_course and course tables.
+Performing left join between the student and student_course tables
+perform left join on the combined table and course table.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
