@@ -1,0 +1,11 @@
+SELECT
+  COUNT() AS no_of_movies
+FROM
+  actor
+  INNER JOIN movie_cast ON actor.id = movie_cast.actor_id
+WHERE
+  name LIKE "Daniel Radcliffe";
+  
+  
+  
+  Get the number of movies in which "Daniel Radcliffe" has acted
