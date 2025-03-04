@@ -1,0 +1,22 @@
+SELECT
+  course.name AS course_name,
+  student_id,
+  content
+FROM
+  review
+  INNER JOIN course ON course.id = review.course_id
+WHERE
+  course.name = "Cyber Security";
+  
+  
+  
+  
+  
+  Get all the reviews of “Cyber Security” course .
+
+Note:
+Solving this problem involves performing inner join onreviewandcoursetables.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+course_name	student_id	content
+...	...	...
