@@ -1,0 +1,19 @@
+SELECT
+  count() AS no_of_courses
+FROM
+  student
+  INNER JOIN student_course ON student.id = student_course.student_id
+WHERE
+  student.full_name = "Ram";
+  
+  
+  
+  
+  Get the number of courses taken by “Ram”.
+
+Note:
+You can get the year from the enrollment date
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+no_of_courses
+...
