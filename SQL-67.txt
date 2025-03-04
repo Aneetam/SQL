@@ -1,0 +1,19 @@
+SELECT
+  movie.name AS movie_name,
+  movie_cast.actor_id
+FROM
+  movie
+  INNER JOIN movie_cast ON movie.id = movie_cast.movie_id
+ORDER BY
+  movie_name ASC,
+  actor_id ASC;
+  
+  
+  
+  
+  
+  
+For all the movies, get the actor_ids of the cast.
+
+Note:
+Sort the output in the ascending order of movie_name, and then in the ascending order of the actor_id.
