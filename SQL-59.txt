@@ -1,0 +1,30 @@
+SELECT
+  post.post_id,
+  post.content,
+  post.posted_by,
+  count(
+    CASE
+      WHEN reaction.reaction_type IN("LIKE", "LIT", "WOW", "LOVE") THEN 1
+      ELSE NULL
+    END
+  ) AS positive_reactions_count
+FROM
+  post
+  LEFT JOIN reaction ON post.post_id = reaction.post_id
+GROUP BY
+  post.post_id
+ORDER BY
+  positive_reactions_count DESC,
+  post.post_id ASC;
+  
+  
+  
+  
+  
+  
+  For each post, get the total number of positive reactions aspositive_reactions_count
+
+Note:
+Consider the reaction_type "LIKE", "LIT", "WOW" and "LOVE" as positive reactions.
+If the post does not have any positive reactions, keep thepositive_reactions_count as 0.
+Sort the output in the descending order of positive_reactions_count , and then in the ascending order ofpost_id.
