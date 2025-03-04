@@ -1,0 +1,19 @@
+SELECT
+  actor.name AS actor_name,
+  COUNT() AS no_of_movies
+FROM
+  actor
+  INNER JOIN movie_cast ON actor.id = movie_cast.actor_id
+GROUP BY
+  actor.id
+ORDER BY
+  actor_name ASC;
+  
+  
+  
+  
+  
+  For each actor, get the number of movies in which they are casted. 
+
+Note:
+Sort the output in the ascending order of the actor_name.
