@@ -1,0 +1,15 @@
+SELECT
+  user_id,
+  pincode,
+  SUM(total_amount) AS total_amount_spent
+FROM
+  location_order_details
+GROUP BY
+  user_id
+HAVING
+  total_amount_spent > 50000;
+  
+  
+  Get the user_id and pincode of the customers who shopped for more than 50,000 rupees from thelocation_order_detailsview present in the database.
+
+Data in location_order_details
