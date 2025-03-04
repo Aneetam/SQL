@@ -1,0 +1,19 @@
+SELECT
+  student.full_name,
+  count(student_course.course_id) AS no_of_courses
+FROM
+  student
+  LEFT JOIN student_course ON student.id = student_course.student_id
+GROUP BY
+  student.id
+HAVING
+  no_of_courses >= 2;
+  
+  
+  
+  Get the students who have taken at least 2 courses.
+
+Note:
+Solving this problem involves performing join operations onstudentandstudent_coursetables.
+Use HAVING clause to filter the students who have taken at least two courses.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
