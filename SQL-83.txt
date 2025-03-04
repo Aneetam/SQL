@@ -1,0 +1,19 @@
+SELECT
+  name,
+  rating
+FROM
+  product
+WHERE
+  category = "WATCH"
+  AND rating > (
+    SELECT
+      AVG(rating)
+    FROM
+      product
+    WHERE
+      category = "WATCH"
+  );
+  
+  
+  
+  Get all the products from the "WATCH" category, where rating is greater than average rating
