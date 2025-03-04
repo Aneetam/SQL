@@ -1,0 +1,25 @@
+SELECT
+  student_course.student_id,
+  course.name,
+  student_course.score
+FROM
+  student_course
+  INNER JOIN course ON course.id = student_course.course_id
+WHERE
+  student_course.student_id = 1
+  AND strftime("%Y", enrollment_date) = '2021';
+  
+  
+  
+  
+  
+  
+For a student with student (id = 1), get all the courses and the scores she/he secured in the year 2021.
+
+Note:
+Solving this question involves performing inner join onstudent_courseandcoursetables.
+You can get the year from the enrollment date.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+student_id	name	score
+...	...	...
