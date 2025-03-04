@@ -1,0 +1,19 @@
+SELECT
+  DISTINCT (actor.name) AS actor_name
+FROM
+  actor
+  INNER JOIN movie_cast ON actor.id = movie_cast.actor_id
+  INNER JOIN movie ON movie_cast.movie_id = movie.id
+WHERE
+  movie.name LIKE "%Harry Potter%"
+ORDER BY
+  actor_name ASC;
+  
+  
+  
+  
+  Get all the distinct actors who casted in any of the Harry Potter movies.
+
+Note:
+Consider the movie names that contain "Harry Potter ".
+Sort the output in the ascending order of the actor_name
