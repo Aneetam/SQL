@@ -1,0 +1,23 @@
+SELECT
+  student.full_name,
+  count(student_course.course_id) AS no_of_courses
+FROM
+  student
+  LEFT JOIN student_course ON student.id = student_course.student_id
+GROUP BY
+  student.id;
+  
+  
+  
+  
+  
+  For all the students, get the total number of courses taken by each student.
+
+A student need not register for any course as well. So, we need to perform a left join between thestudentandstudent_coursetables.
+
+Note:
+You can get the year from the enrollment date
+As we have to calculate the number of courses for each student, we have to GROUP BY the students first and then perform the count() aggregation.
+Don't apply ORDER BY, LIMIT, OFFSET clauses as it is not required for this problem.
+Expected Output Format:
+full_name	no_of_courses
