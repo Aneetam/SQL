@@ -1,0 +1,23 @@
+SELECT
+  post.post_id,
+  post.posted_by,
+  post.content,
+  post.posted_at,
+  count(COMMENT.comment_id) AS comments_count
+FROM
+  post
+  LEFT JOIN COMMENT ON post.post_id = COMMENT.post_id
+WHERE
+  post.posted_by = 98
+GROUP BY
+  post.post_id
+ORDER BY
+  post.post_id ASC;
+  
+  
+  Fetch all the posts and their comments count, for the posts posted by the user with user_id = 98.
+
+Note:
+Output must contain posts in the ascending order of post_id.
+If there is no post for a user, keep the content, posted_at values as NULL.
+If there is no comment for a post, keep the comments_count values as 0.
