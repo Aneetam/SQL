@@ -1,0 +1,27 @@
+SELECT
+  user.name,
+  user.gender,
+  user.age,
+  user.country,
+  user.premium_membership
+FROM
+  user
+  INNER JOIN user_likes ON user.user_id = user_likes.user_id
+WHERE
+  user.country = "INDIA"
+  AND user.age < 30
+  AND user_likes.reaction_type = "LIKE"
+  AND strftime('%Y', reacted_at) = "2020"
+  AND user_likes.video_id = "1011"
+ORDER BY
+  user.name ASC;
+  
+  
+  
+  
+Get all the Indian users details whose age is below 30 years and liked the video (video_id = 1011) in the year 2020.
+
+Note:
+Consider the name of the country as "INDIA"
+Consider reaction_type LIKE as liked.
+Sort the output in the ascending order of name.
