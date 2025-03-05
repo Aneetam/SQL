@@ -1,0 +1,25 @@
+SELECT
+  user.country,
+  count() AS no_of_subscribers
+FROM
+  user
+  INNER JOIN channel_user ON user.user_id = channel_user.user_id
+  INNER JOIN channel ON channel.channel_id = channel_user.channel_id
+WHERE
+  channel.channel_id = "399"
+GROUP BY
+  user.country
+ORDER BY
+  user.country ASC;
+  
+  
+  
+  
+Insights about users:
+Get the geographic distribution of Taylor Swift channel (channel_id = 399) subscribers.
+
+Note:
+Geographic distribution: Number of Taylor Swift subscribers present in each country. Ignore the countries whereno_of_subscribersis 0.
+Order the result in the ascending order of the country name.
+Expected Output Format
+country	no_of_subscribers
