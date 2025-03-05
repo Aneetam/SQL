@@ -1,0 +1,20 @@
+SELECT
+  name,
+  no_of_views
+FROM
+  video
+ORDER BY
+  no_of_views DESC,
+  name ASC
+LIMIT
+  10;
+  
+  
+  Fetch the top 10 videos having more number of views.
+
+Note:
+Output must contain rows with the highest no_of_views first.
+If two videos have the same no_of_views, then sort by name in alphabetical order.
+Expected Output Format:
+name	no_of_views
+...	...
