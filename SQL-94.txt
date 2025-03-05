@@ -1,0 +1,22 @@
+SELECT
+  video.video_id,
+  video.name,
+  genre.genre_id
+FROM
+  video
+  INNER JOIN video_genre ON video.video_id = video_genre.video_id
+  INNER JOIN genre ON video_genre.genre_id = genre.genre_id
+WHERE
+  genre.genre_id = "201"
+  AND video.no_of_views > 100000
+ORDER BY
+  video.video_id ASC;
+  
+  
+  
+  
+  
+  Get all the videos that belong to "Action" genre (genre_id = 201) and have more than 1 lakh views.
+
+Note:
+Sort the output in the ascending order of video_id.
