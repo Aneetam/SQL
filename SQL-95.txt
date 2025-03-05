@@ -1,0 +1,19 @@
+SELECT
+  count() AS no_of_subscribers
+FROM
+  user
+  INNER JOIN channel_user ON channel_user.user_id = user.user_id
+  INNER JOIN channel ON channel.channel_id = channel_user.channel_id
+WHERE
+  strftime('%Y', channel_user.subscribed_datetime) = "2018"
+  AND channel.name LIKE "Tyler Oakley";
+  
+  
+  
+  
+  
+  
+  Get the total number of users subscribed for the channel "Tyler Oakley" (channel_id = 376) in the year 2018.
+
+Expected Output Format
+no_of_subscribers
