@@ -1,0 +1,20 @@
+SELECT
+  c.channel_id AS channel_id,
+  c.name AS channel_name
+FROM
+  channel c
+  INNER JOIN video v ON c.channel_id = v.channel_id
+WHERE
+  v.name LIKE "%music%"
+  AND CAST(strftime("%Y", published_datetime) AS INTEGER) < 2016
+GROUP BY
+  channel_name
+ORDER BY
+  c.name ASC;
+  
+  
+  Get all distinct channels which published music videos before 2016.
+
+Note:
+You can consider the videos which contain "music" in name as music videos.
+Sort the output in the ascending order of chanel_name.
