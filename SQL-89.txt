@@ -1,0 +1,22 @@
+SELECT
+  name,
+  no_of_views,
+  CAST(strftime('%Y', published_datetime) AS INTEGER) AS year
+FROM
+  video
+WHERE
+  name LIKE '%music%'
+  AND CAST(strftime('%Y', published_datetime) AS INTEGER) < 2016
+ORDER BY
+  year DESC,
+  name ASC;
+  
+  
+  
+  
+Get all the music videos released before the year 2016.
+
+Note:
+You can consider the videos which contain "music" in name as music videos.
+Get the year in the integer format
+Sort the output in the descending order of year, and then in the ascending order of name.
