@@ -1,0 +1,20 @@
+SELECT
+  channel.channel_id,
+  channel.name AS channel_name
+FROM
+  video
+  INNER JOIN channel ON video.channel_id = channel.channel_id
+WHERE
+  video.name LIKE "%review%"
+GROUP BY
+  channel.channel_id
+ORDER BY
+  channel_name ASC;
+  
+  
+  
+  Get all the unique channels that published review videos.
+
+Note:
+You can consider the videos which contain "review" in name as review videos.
+Sort the output in the ascending order of channel_name.
