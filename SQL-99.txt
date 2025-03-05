@@ -1,0 +1,14 @@
+SELECT
+  count(DISTINCT user.country) AS country_count
+FROM
+  user
+  INNER JOIN channel_user ON user.user_id = channel_user.user_id
+  INNER JOIN channel ON channel.channel_id = channel_user.channel_id
+WHERE
+  channel.channel_id = "399"
+GROUP BY
+  channel.channel_id;
+  
+  
+  
+  Get the total number of countries where the subscribers of the Taylor Swift channel (channel_id = 399) are present.
