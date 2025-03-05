@@ -1,0 +1,9 @@
+SELECT
+  COUNT(DISTINCT country) AS country_count
+FROM
+  user;
+  
+  Get the total number of countries where the users of the platform are present.
+
+Expected Output Format
+country_count
