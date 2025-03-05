@@ -1,0 +1,25 @@
+SELECT
+  video_genre.genre_id,
+  count() AS no_of_videos
+FROM
+  video
+  LEFT JOIN video_genre ON video.video_id = video_genre.video_id
+WHERE
+  CAST(strftime('%Y', published_datetime) AS INTEGER) BETWEEN 2010
+  AND 2020
+  AND video_genre.genre_id IN ('201', '202', '204', '205', '206', '207')
+GROUP BY
+  genre_id
+ORDER BY
+  no_of_videos DESC,
+  video_genre.genre_id ASC;
+  
+  
+  
+  Between 2010 & 2020, find the number of videos released in each of the below genres.
+
+Note:
+genre_ids : 201, 202, 204, 205, 206, 207
+Sort the output in the descending order of no_of_videos, and then in the ascending order of genre_id.
+Expected Output Format:
+genre_id	no_of_videos
