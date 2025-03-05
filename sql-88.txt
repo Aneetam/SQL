@@ -1,0 +1,15 @@
+SELECT
+  count() AS no_of_channels
+FROM
+  channel
+  
+  
+Get the total number of channels in the database.
+
+Expected Output Format
+no_of_channels
+
+
+Get the total number of channels in the database.
+
+Expected Output Format
